@@ -28,7 +28,7 @@ The plugin source uses the MIT license. Anthropic directory submission and revie
 
 ## Claude Code install
 
-After this repository is published, use Claude Code 2.1.275 or later:
+Use Claude Code 2.1.275 or later:
 
 ```text
 /plugin install legend --marketplace many-legends/legend-ai-plugin
