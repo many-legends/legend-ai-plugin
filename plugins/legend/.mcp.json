@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "legend": {
+      "type": "http",
+      "url": "https://app.legend.trade/api/connectors/mcp"
+    }
+  }
+}

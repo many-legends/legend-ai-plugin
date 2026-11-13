@@ -1,0 +1,18 @@
+{
+  "name": "legend-ai",
+  "owner": {
+    "name": "Legend",
+    "email": "support@legend.trade",
+    "url": "https://legend.trade"
+  },
+  "metadata": {
+    "description": "Legend account and order-review workflows for Claude."
+  },
+  "plugins": [
+    {
+      "name": "legend",
+      "source": "./plugins/legend",
+      "description": "Read your Legend account, review positions and fills, and prepare an order for review in Legend."
+    }
+  ]
+}

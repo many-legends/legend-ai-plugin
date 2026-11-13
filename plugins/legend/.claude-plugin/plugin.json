@@ -1,0 +1,20 @@
+{
+  "name": "legend",
+  "displayName": "Legend",
+  "version": "0.1.0",
+  "description": "Read your Legend account, review positions and fills, and prepare an order for review in Legend.",
+  "author": {
+    "name": "Legend",
+    "email": "support@legend.trade",
+    "url": "https://legend.trade"
+  },
+  "homepage": "https://legend.trade",
+  "license": "MIT",
+  "keywords": [
+    "legend",
+    "portfolio",
+    "trading"
+  ],
+  "privacyPolicyUrl": "https://legend.trade/privacy",
+  "repository": "https://github.com/many-legends/legend-ai-plugin"
+}
