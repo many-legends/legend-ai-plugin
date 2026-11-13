@@ -1,8 +1,15 @@
 # Legend AI plugin
 
-Official Legend plugin source for Claude. The plugin uses Legend's remote MCP server to read your account and prepare orders for review in Legend. It does not execute orders or move funds.
+Official Legend plugin source for Claude, ChatGPT, and Codex. The plugin uses Legend's remote MCP server to read your account and prepare orders for review in Legend. It does not execute orders or move funds.
 
-## Install
+## Packages
+
+| Package | Client | Status |
+| --- | --- | --- |
+| [Legend](plugins/legend) | Claude | Public source; existing MCP directory submission is in review. No plugin directory submission is claimed. |
+| [Legend](plugins/legend-openai) | ChatGPT and Codex | Submission package prepared. Portal checks, hosted tests, reviewer access, and a video are pending. |
+
+## Install in Claude
 
 In Claude Code 2.1.275 or later:
 

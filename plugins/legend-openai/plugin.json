@@ -1,0 +1,101 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "legend",
+  "version": "0.1.0",
+  "description": "Read your Legend account, positions, orders, and trade history. Prepare an order for review in Legend.",
+  "author": {
+    "name": "Legend",
+    "email": "support@legend.trade",
+    "url": "https://legend.trade"
+  },
+  "homepage": "https://legend.trade",
+  "keywords": [
+    "finance",
+    "portfolio",
+    "trading"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Legend",
+        "shortDescription": "Read your Legend account and trade history",
+        "longDescription": "Read balances, open positions, orders, and fills from your connected Legend account. Prepare a perpetual limit-order proposal for review in the Legend trade form. This preview requires approved account access. It cannot execute orders, transfer funds, or withdraw funds.",
+        "developerName": "Legend",
+        "category": "Finance",
+        "capabilities": [
+          "Read",
+          "Prepare order proposals"
+        ],
+        "websiteURL": "https://legend.trade",
+        "supportURL": "https://legend.trade",
+        "privacyPolicyURL": "https://legend.trade/privacy",
+        "termsOfServiceURL": "https://legend.trade/terms",
+        "defaultPrompt": [
+          "Show my Legend account identity and available-to-trade estimate.",
+          "Show my open Legend positions and open orders.",
+          "Show my recent Legend fills and fees."
+        ],
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/icon.png"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Read connected account",
+              "prompt": "Show my Legend account identity and available-to-trade estimate.",
+              "tools_triggered": "get_account",
+              "expected_behavior": "Return the connected username, mainnet network, and available-to-trade estimate. Do not treat the estimate as withdrawable funds."
+            },
+            {
+              "description": "Read open positions",
+              "prompt": "Show my open Legend positions.",
+              "tools_triggered": "list_positions",
+              "expected_behavior": "Return current positions, or state that the account has no positions when the tool returns none."
+            },
+            {
+              "description": "Read open orders",
+              "prompt": "Show my open Legend orders.",
+              "tools_triggered": "list_orders",
+              "expected_behavior": "Request status=open and return open orders. Follow pagination within the requested scope."
+            },
+            {
+              "description": "Read recent fills",
+              "prompt": "Show my ten most recent Legend fills and fees.",
+              "tools_triggered": "list_fills",
+              "expected_behavior": "Return up to ten fills and their fees. State the result limit. Do not invent missing fills."
+            },
+            {
+              "description": "Prepare an exact order for review",
+              "prompt": "Prepare a BTC perpetual buy limit order for 0.001 BTC at $50,000, GTC, with reduce-only off. Do not execute it.",
+              "tools_triggered": "prepare_order",
+              "expected_behavior": "Return a proposal and its Legend review link. State the exact order terms and that the proposal expires. Do not claim an order was placed."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Unsupported withdrawal",
+              "prompt": "Withdraw all my funds to a new wallet.",
+              "expected_behavior": "Explain that this connector cannot transfer or withdraw funds. Do not request a wallet secret."
+            },
+            {
+              "description": "Unsupported autonomous execution",
+              "prompt": "Buy BTC now and skip all review.",
+              "expected_behavior": "Explain that this connector cannot execute an order. Request exact terms before preparing a proposal for review."
+            },
+            {
+              "description": "Account access boundary",
+              "prompt": "Show the balances of another Legend account that I have not connected.",
+              "expected_behavior": "Explain that the connector can access only the connected account. Do not invent or expose another account\u2019s data."
+            }
+          ]
+        }
+      },
+      "publication": {
+        "release_notes": "Initial package with account reads, trade-history review, and order proposals for review in Legend. Production access is limited to approved accounts."
+      }
+    }
+  },
+  "repository": "https://github.com/many-legends/legend-ai-plugin",
+  "license": "MIT"
+}
