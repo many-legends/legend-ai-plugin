@@ -1,0 +1,20 @@
+{
+  "name": "legend-code",
+  "displayName": "Legend workflows",
+  "version": "0.1.1",
+  "description": "Use your connected claude.ai Legend tools to check accounts, review fills, and prepare orders for review.",
+  "author": {
+    "name": "Legend",
+    "email": "support@legend.trade",
+    "url": "https://legend.trade"
+  },
+  "homepage": "https://legend.trade",
+  "license": "MIT",
+  "keywords": [
+    "legend",
+    "portfolio",
+    "trading"
+  ],
+  "privacyPolicyUrl": "https://legend.trade/privacy",
+  "repository": "https://github.com/many-legends/legend-ai-plugin"
+}

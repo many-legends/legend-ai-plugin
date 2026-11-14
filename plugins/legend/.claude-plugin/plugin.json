@@ -1,7 +1,7 @@
 {
   "name": "legend",
   "displayName": "Legend",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Read your Legend account, review positions and fills, and prepare an order for review in Legend.",
   "author": {
     "name": "Legend",

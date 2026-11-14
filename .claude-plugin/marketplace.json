@@ -13,6 +13,11 @@
       "name": "legend",
       "source": "./plugins/legend",
       "description": "Read your Legend account, review positions and fills, and prepare an order for review in Legend."
+    },
+    {
+      "name": "legend-code",
+      "source": "./plugins/legend-code",
+      "description": "Use your connected claude.ai Legend tools to check accounts, review fills, and prepare orders for review."
     }
   ]
 }

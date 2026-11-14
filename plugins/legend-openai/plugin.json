@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "legend",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Read your Legend account, positions, orders, and trade history. Prepare an order for review in Legend.",
   "author": {
     "name": "Legend",
@@ -19,7 +19,7 @@
       "interface": {
         "displayName": "Legend",
         "shortDescription": "Read your Legend account and trade history",
-        "longDescription": "Read balances, open positions, orders, and fills from your connected Legend account. Prepare a perpetual limit-order proposal for review in the Legend trade form. This preview requires approved account access. It cannot execute orders, transfer funds, or withdraw funds.",
+        "longDescription": "Read balances, open positions, orders, and fills from your connected Legend account. Prepare a perpetual limit-order proposal for review in the Legend trade form. It cannot execute orders, transfer funds, or withdraw funds.",
         "developerName": "Legend",
         "category": "Finance",
         "capabilities": [
@@ -92,7 +92,7 @@
         }
       },
       "publication": {
-        "release_notes": "Initial package with account reads, trade-history review, and order proposals for review in Legend. Production access is limited to approved accounts."
+        "release_notes": "Open connector access to all Legend users. Account consent and permissions still apply. Add account, history, and order-review workflows."
       }
     }
   },
